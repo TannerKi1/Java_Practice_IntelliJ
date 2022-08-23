@@ -1,6 +1,5 @@
-package BOJ_Java.String;
+package BOJ_Java.f6;
 import java.util.*;
-import java.io.*;
 
 public class BOJ_2675_문자열반복 {
     public static void main(String[] args) {

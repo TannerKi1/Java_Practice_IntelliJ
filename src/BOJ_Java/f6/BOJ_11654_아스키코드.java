@@ -1,5 +1,4 @@
-package BOJ_Java.String;
-import java.io.*;
+package BOJ_Java.f6;
 import java.util.*;
 
 public class BOJ_11654_아스키코드 {

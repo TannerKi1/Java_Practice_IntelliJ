@@ -1,4 +1,4 @@
-package BOJ_Java.String;
+package BOJ_Java.f6;
 import java.io.*;
 
 public class BOJ_10809_알파벳찾기 {
