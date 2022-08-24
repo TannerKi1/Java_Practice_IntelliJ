@@ -1,4 +1,4 @@
-package Projects.FirstBank;
+package Projects.A_BankProgram.FirstBank;
 import java.util.Scanner;
 
 public class Account {

@@ -1,4 +1,4 @@
-package Projects.SecondBank;
+package Projects.A_BankProgram.SecondBank;
 import java.util.Scanner; // 입력값을 받아야 하니까.
 
 public class Account {

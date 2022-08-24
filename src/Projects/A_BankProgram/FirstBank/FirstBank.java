@@ -1,4 +1,4 @@
-package Projects.FirstBank;
+package Projects.A_BankProgram.FirstBank;
 
 public class FirstBank {
     public static void main(String[] args){
