@@ -26,10 +26,10 @@ public class Account {
             System.out.println("Thank you very much " + accountName + ".");
             System.out.println(dMoney + " has been deposited.");
             System.out.println("Have a nice day!!");
-            welcome();
+
         } else {
             System.out.println("That money can't be deposited");
-            welcome();
+
         }
     }
 
@@ -40,22 +40,17 @@ public class Account {
             lastTransaction = -wMoney;
             System.out.println("Thank you very much, Mr " + accountName + " .");
             System.out.println("You just took " + wMoney + " from us.");
-            welcome();
-
         } else {
             System.out.println("Sorry Error occured!");
-            welcome();
         }
     }
 
     void checkBalance() {
         System.out.println("Your current balance is " + balance + " .");
-        welcome();
     }
 
     void checkTransaction() {
         System.out.println(lastTransaction);
-        welcome();
     }
 
     void checkInterest(int year) {
@@ -63,7 +58,6 @@ public class Account {
         double interestRate = 0.05;
         System.out.println("Your interest is going to be...");
         System.out.println(balance * (1 + interestRate) * month);
-        welcome();
     }
 
     void checkPassword(int numPassword){
@@ -80,9 +74,9 @@ public class Account {
         }
     }
 
-    void giveMoney(){
-
-    }
+//    void giveMoney(){
+//
+//    }
 
 
 
@@ -107,51 +101,59 @@ public class Account {
         System.out.println("Please choose the button: ");
         Scanner sc = new Scanner(System.in);
 
-        char button = '\0';
+        char option = '\0';
 
         // 소문자로 들어와도 대문자로 알아서 바꿔주는 기능이 필요함.
         String input = sc.next();
-        char button1 = Character.toUpperCase(input.charAt(0));
-        button = button1;
+        char option1 = Character.toUpperCase(input.charAt(0));
 
         do {
-            switch (button) {
-                case 'A':
+            switch (option1) {
+                case 'A' :
                     System.out.println("===================");
                     System.out.println("How much do you want to put in?: ");
                     deposit(sc.nextFloat());
                     break;
-                case 'B':
+
+                case 'B' :
                     System.out.println("====================");
                     System.out.println("Please type in your password: ____");
                     checkPassword(sc.nextInt());
                     System.out.println("How much do you want to withdraw?: ");
                     withdraw(sc.nextFloat());
                     break;
-                case 'C':
+
+                case 'C' :
                     System.out.println("====================");
                     System.out.println("Could you wait for me...?");
                     System.out.println("Please type in your password: ____");
                     checkPassword(sc.nextInt());
                     checkBalance();
                     break;
-                case 'D':
+
+                case 'D' :
                     System.out.println("=====================");
                     System.out.println("Please type in your password: ____");
                     checkPassword(sc.nextInt());
                     System.out.println("Okay let me check the last Transaction");
                     checkTransaction();
                     break;
-                case 'E':
+
+                case 'E' :
                     System.out.println("======================");
                     System.out.println("How many years do you want to continue?");
                     checkInterest(sc.nextInt());
                     break;
-                default:
+
+                case 'F':
+                    System.out.println("======================");
+                    break;
+
+                default :
                     System.out.println("=======================");
                     System.out.println("Please press the right button from A ~ Z!");
-                    welcome();
             }
-        } while (button != 'F');
+        }while (option1 != 'F');
+        System.out.println("Thank you for banking with us!");
     }
 }
