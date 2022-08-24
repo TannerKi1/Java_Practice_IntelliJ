@@ -1,4 +1,5 @@
-package BOJ_Java.F6;
+package BOJ_Java.f6;
+import java.util.*;
 import java.io.*;
 
 public class BOJ_2775_부녀회장이될거야_B1 {
@@ -30,9 +31,6 @@ public class BOJ_2775_부녀회장이될거야_B1 {
                     grid[c][d] = 1;
                 }
             }
-
-
-
 
             // dp로 나머지 빈칸 채우기. 한 층은 아래층과 바로 옆의 층의 합
             for (int r = 1; r < k + 1; r++) {
