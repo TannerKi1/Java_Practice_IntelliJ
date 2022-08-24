@@ -7,14 +7,14 @@ public class BOJ_2908_상수_B2 {
 
         Scanner sc = new Scanner(System.in);
 
-        // 띄어쓰기를 단위로 두 문자열을 저장해준다 //
+        // 띄어쓰기를 단위로 두 문자열을 저장해준다
         String str1 = sc.next();
         String str2 = sc.next();
 
         /* num1과 num2를 각각 뒤집어서 저장할 방법 생각하기
          뒤에서부터 읽으면 어떨까? */
 
-        // 문자열을 쌓을 빈 문자열 선언//
+        // 문자열을 쌓을 빈 문자열 선언
         String str3 = "";
         String str4 = "";
 
@@ -25,17 +25,17 @@ public class BOJ_2908_상수_B2 {
             str3 += A;
         }
 
-        // 옆의 문자에도 동일한 방법 적용 //
+        // 옆의 문자에도 동일한 방법 적용
         for (int j = str2.length() - 1; j >= 0; j--){
             char B = str2.charAt(j);
             str4 += B;
         }
 
-        // 이후 문자열을 정수열로 변환 //
+        // 이후 문자열을 정수열로 변환
         int num1 = Integer.parseInt(str3);
         int num2 = Integer.parseInt(str4);
 
-        // Math.max()를 사용하여 더 큰 값을 리턴 //
+        // Math.max()를 사용하여 더 큰 값을 리턴
         System.out.println(Math.max(num1, num2));
 
     }

@@ -6,13 +6,13 @@ public class BOJ_5622_다이얼_B2 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // 다이얼을 돌려야하는 문자를 받아옴 //
+        // 다이얼을 돌려야하는 문자를 받아옴
         String str = br.readLine();
 
-        // 숫자를 쌓을 저장값 선언 //
+        // 숫자를 쌓을 저장값 선언
         int num = 0;
 
-        // for문 돌면서 일치하면 value 값 가져오기 //
+        // for문 돌면서 일치하면 value 값 가져오기
         for (int i = 0; i < str.length(); i++){
             char X = str.charAt(i);
 
@@ -49,7 +49,7 @@ public class BOJ_5622_다이얼_B2 {
             }
         }
 
-        // 정답 출력 //
+        // 정답 출력
         System.out.println(num);
     }
 }
