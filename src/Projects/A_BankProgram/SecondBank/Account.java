@@ -9,11 +9,13 @@ public class Account {
     int balance;
     int lastTransaction;
     int visitCount;
+    int validPassword;
 
     // 가장 메인이 되는 method 부르기
-    Account(String name, String ID) {
+    Account(String name, String ID, int PassWord) {
         accountName = name;
         accountID = ID;
+        validPassword = PassWord;
     }
 
     // deposit이라는 method 잡아주기
@@ -31,6 +33,7 @@ public class Account {
         }
     }
 
+    // 돈을 찾는 method. 여기에 password 기능을 추가해보자 -> 아니지, checkPassword이라는 함수를 만들어보자
     void withdraw(int wMoney) {
         if (wMoney > 0 && wMoney <= balance) {
             balance -= wMoney;
@@ -61,6 +64,24 @@ public class Account {
         System.out.println("Your interest is going to be...");
         System.out.println(balance * (1 + interestRate) * month);
         welcome();
+    }
+
+    void checkPassword(int numPassword){
+        int inputPassword = numPassword;
+
+
+
+        if (validPassword == inputPassword){
+            System.out.println("Correct Password");
+            System.out.println("Access Approved!!!");
+        }
+
+        else{
+            System.out.println("Wrong Password");
+            System.out.println("You cannot access to the account.");
+            welcome();
+        }
+
     }
 
 
@@ -100,6 +121,8 @@ public class Account {
                     break;
                 case 'B':
                     System.out.println("====================");
+                    System.out.println("Please type in your password: ____");
+                    checkPassword(sc.nextInt());
                     System.out.println("How much do you want to withdraw?: ");
                     withdraw(sc.nextInt());
                     break;
