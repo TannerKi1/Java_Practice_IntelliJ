@@ -1,4 +1,4 @@
-package BOJ_Java.f6;
+package BOJ_Java.F6;
 import java.util.*;
 import java.io.*;
 
