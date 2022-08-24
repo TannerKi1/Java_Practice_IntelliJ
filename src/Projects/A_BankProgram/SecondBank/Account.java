@@ -6,8 +6,8 @@ public class Account {
     // field 위치니까, 무슨 값들을 사용할 것인지 미리 형태를 저장해놓기
     String accountName;
     String accountID;
-    int balance;
-    int lastTransaction;
+    float balance;
+    float lastTransaction;
     int visitCount;
     int validPassword;
 
@@ -19,7 +19,7 @@ public class Account {
     }
 
     // deposit이라는 method 잡아주기
-    void deposit(int dMoney) {
+    void deposit(float dMoney) {
         if (dMoney > 0) {
             balance += dMoney;
             lastTransaction = dMoney;
@@ -34,7 +34,7 @@ public class Account {
     }
 
     // 돈을 찾는 method. 여기에 password 기능을 추가해보자 -> 아니지, checkPassword이라는 함수를 만들어보자
-    void withdraw(int wMoney) {
+    void withdraw(float wMoney) {
         if (wMoney > 0 && wMoney <= balance) {
             balance -= wMoney;
             lastTransaction = -wMoney;
@@ -67,11 +67,8 @@ public class Account {
     }
 
     void checkPassword(int numPassword){
-        int inputPassword = numPassword;
 
-
-
-        if (validPassword == inputPassword){
+        if (validPassword == numPassword){
             System.out.println("Correct Password");
             System.out.println("Access Approved!!!");
         }
@@ -81,8 +78,13 @@ public class Account {
             System.out.println("You cannot access to the account.");
             welcome();
         }
+    }
+
+    void giveMoney(){
 
     }
+
+
 
 
     // welcome method 정의해주기
@@ -117,33 +119,37 @@ public class Account {
                 case 'A':
                     System.out.println("===================");
                     System.out.println("How much do you want to put in?: ");
-                    deposit(sc.nextInt());
+                    deposit(sc.nextFloat());
                     break;
                 case 'B':
                     System.out.println("====================");
                     System.out.println("Please type in your password: ____");
                     checkPassword(sc.nextInt());
                     System.out.println("How much do you want to withdraw?: ");
-                    withdraw(sc.nextInt());
+                    withdraw(sc.nextFloat());
                     break;
                 case 'C':
                     System.out.println("====================");
                     System.out.println("Could you wait for me...?");
+                    System.out.println("Please type in your password: ____");
+                    checkPassword(sc.nextInt());
                     checkBalance();
                     break;
                 case 'D':
                     System.out.println("=====================");
+                    System.out.println("Please type in your password: ____");
+                    checkPassword(sc.nextInt());
                     System.out.println("Okay let me check the last Transaction");
                     checkTransaction();
                     break;
                 case 'E':
                     System.out.println("======================");
-                    System.out.println("How much year do you want to continue?");
+                    System.out.println("How many years do you want to continue?");
                     checkInterest(sc.nextInt());
                     break;
                 default:
                     System.out.println("=======================");
-                    System.out.println("Please press the right buttom from A ~ Z!");
+                    System.out.println("Please press the right button from A ~ Z!");
                     welcome();
             }
         } while (button != 'F');
