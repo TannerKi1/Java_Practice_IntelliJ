@@ -2,7 +2,7 @@ package Good_Solution;
 
 import java.util.*;
 
-public class 이름붙은반복문연습2 {
+public class Flag만들어서_루프탈출하기2 {
 
     public static void main(String[] args) {
 
